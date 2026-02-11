@@ -1,0 +1,15 @@
+name: Lint Commit Messages
+
+on: [pull_request, push]
+
+jobs:
+  check-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Commit Message Format
+        uses: gs0604/commit-message-checker@v2
+        with:
+          pattern: '^(feat|fix|docs|refactor): .+'
+          error: 'Invalid commit format! Your message must start with "feat: ", "fix: ", "docs: " or "refactor: ".'
+          excludeDescription: 'true'
+          excludeTitle: 'false'
