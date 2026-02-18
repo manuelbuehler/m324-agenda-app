@@ -1,13 +1,15 @@
 export default {
+  parserPreset: {
+    parserOpts: {
+      headerPattern: /^(feat|fix|chore)(!)?: (.+)$/,
+      headerCorrespondence: ['type', 'breaking', 'subject'],
+    },
+  },
   rules: {
     'type-enum': [2, 'always', ['feat', 'fix', 'chore']],
-    'subject-empty': [2, 'never'],
     'type-empty': [2, 'never'],
+    'subject-empty': [2, 'never'],
     'type-case': [0],
-    'header-pattern': [
-      2,
-      'always',
-      '^(feat|fix|chore)(!)?: [a-zA-Z0-9_-]+$'
-    ],
+    'subject-case': [0],
   },
 };
