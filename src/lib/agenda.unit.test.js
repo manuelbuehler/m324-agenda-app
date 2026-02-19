@@ -1,9 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 
-describe('Agenda Unit-Tests (Logik)', () => {
+describe('Agenda Unit-Tests', () => {
     
-    // Test 1: Hinzufügen eines Elements
-    it('sollte ein Agenda-Objekt mit korrekten Feldern hinzufügen', () => {
+    // Test 1:  Adding an item
+    it('should add an agenda object with correct fields', () => {
         /** @type {Array<{id: string, text: string, category: string}>} */
         let agenda = [];
         const newText = 'M324 Dokumentation schreiben';
@@ -22,16 +22,16 @@ describe('Agenda Unit-Tests (Logik)', () => {
         expect(agenda[0]).toHaveProperty('id');
     });
 
-    // Test 2: Validierung der Kategorien
-    it('sollte sicherstellen, dass nur definierte Kategorien verwendet werden', () => {
+    // Test 2: Validation of categories
+    it('should ensure that only defined categories are used', () => {
         const validCategories = ['Privat', 'Arbeit', 'Schule', 'Sonstiges'];
         const testCategory = 'Arbeit';
 
         expect(validCategories).toContain(testCategory);
     });
 
-    // Test 3: Entfernen eines Elements
-    it('sollte ein Element basierend auf dem Index korrekt entfernen', () => {
+    // Test 3: Removing an item
+    it('should remove an item based on the index correctly', () => {
         let agenda = [
             { id: '1', text: 'Test 1', category: 'Privat' },
             { id: '2', text: 'Test 2', category: 'Arbeit' },
@@ -48,8 +48,8 @@ describe('Agenda Unit-Tests (Logik)', () => {
         expect(agenda[1].text).toBe('Test 3');
     });
 
-    // Test 4: Leere Eingabe verhindern
-    it('sollte kein Element hinzufügen, wenn der Text leer ist', () => {
+    // Test 4: Prevent empty input
+    it('should not add an element if the text is empty', () => {
         /** @type {Array<{id: string, text: string, category: string}>} */
         let agenda = [];
         let newAgendaInput = '';
@@ -61,8 +61,8 @@ describe('Agenda Unit-Tests (Logik)', () => {
         expect(agenda.length).toBe(0);
     });
 
-    // Test 5: Umgang mit alten Datenstrukturen
-    it('sollte funktionieren, wenn ein altes Element (nur String) im Array ist', () => {
+    // Test 5: Dealing with old data structures
+    it('should work if there is an old element (string only) in the array', () => {
         const oldAgenda = ['Alte Aufgabe ohne Objekt'];
         
         const displayValue = oldAgenda[0];

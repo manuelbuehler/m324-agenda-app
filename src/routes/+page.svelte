@@ -9,7 +9,7 @@
 	function addAgenda() {
 		if (newAgenda) {
 			agenda = [...agenda, { 
-				id: crypto.randomUUID(), // Eindeutige ID für stabileres Rendering
+				id: crypto.randomUUID(),
 				text: newAgenda, 
 				category: selectedCategory 
 			}];
