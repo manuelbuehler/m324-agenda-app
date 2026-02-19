@@ -1,0 +1,2 @@
+echo "Start unit tests before committing..."
+npm run test:unit
