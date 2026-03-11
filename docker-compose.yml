@@ -1,0 +1,13 @@
+services:
+  agenda-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agenda-app:v1.0
+    container_name: agenda
+    ports:
+      - "8080:8080"
+    restart: always
+    labels:
+      - "project=M324_Agenda"
+      - "environment=production"
