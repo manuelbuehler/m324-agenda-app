@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     
-git     image: ghcr.io/manuelbuehler/m324-agenda-app:latest
+    image: ghcr.io/manuelbuehler/m324-agenda-app:latest
     container_name: agenda_web_prod
     ports:
       - "8080:8080"
