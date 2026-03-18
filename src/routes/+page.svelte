@@ -11,7 +11,7 @@
       agenda = [
         ...agenda,
         {
-          id: crypto.randomUUID(),
+          id: Date.now().toString() + Math.random().toString(36).substring(2),
           text: newAgenda,
           category: selectedCategory,
         },
